@@ -13,7 +13,7 @@ export function NavModal({
   return (
     <Sheet open={opened} onOpenChange={setOpened}>
       <SheetContent side="top">
-        <div className="flex flex-col  items-center justify-center space-x-0 mx-2">
+        <div className="flex flex-row mt-6  items-center justify-start">
           {NAV_PROPS.map((item) => (
             <HeaderNavigation
               key={item.label}

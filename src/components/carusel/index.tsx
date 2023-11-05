@@ -16,25 +16,22 @@ const Carusel = () => {
 
   const images = [imageOne, imageTwo, imageThree, imageFour];
   return (
-    // <div
-    //   className="embla ml-4 mt-12 rounded-lg sm:w-[300px] md:w-[900px] lg:w-[1000px] xl:w-[1200px]  "
-    //   ref={emblaRef}
-    // >
-    //   <div className="embla__container">
-    //     {images.map((item, index) => (
-    //       <Image
-    //         priority
-    //         key={index}
-    //         src={item}
-    //         alt="image"
-    //         width={300}
-    //         height={300}
-    //         className="embla__slide"
-    //       ></Image>
-    //     ))}
-    //   </div>
-    // </div>
-    <div>HOME</div>
+    <div className="embla rounded-lg w-full  " ref={emblaRef}>
+      <div className="embla__container">
+        {images.map((item, index) => (
+          <Image
+            priority
+            key={index}
+            src={item}
+            alt="image"
+            width={300}
+            height={300}
+            className="embla__slide"
+          ></Image>
+        ))}
+      </div>
+    </div>
+    // <div>HOME</div>
   );
 };
 

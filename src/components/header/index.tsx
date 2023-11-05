@@ -25,6 +25,7 @@ const Header = () => {
         >
           <Menu />
         </Button>
+
         <Link href="/">
           <h1 className="text-3xl">Ing-Elektronika</h1>
         </Link>
