@@ -30,7 +30,7 @@ const Header = () => {
           <h1 className="text-3xl">Ing-Elektronika</h1>
         </Link>
 
-        <div className="flex items-center justify-end space-x-4 hidden lg:block">
+        <div className="flex items-center space-x-4 hidden lg:block">
           {NAV_PROPS.map((item) => (
             <HeaderNavigation
               key={item.label}
