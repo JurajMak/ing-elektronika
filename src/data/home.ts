@@ -1,10 +1,16 @@
 import banner from '@/../public/assets/images/serv-banner.jpg';
 import fontele from '@/../public/assets/images/fontele.png';
+export type ContentType = {
+  id: number;
+  text: string;
+};
 
-export type CardType = {
+export type CardType<T> = {
   title?: string;
+  description?: string;
+  content?: T;
   image?: any;
-  content?: string;
+  about?: string;
 };
 
 export const EXAMINATION = {
@@ -15,17 +21,12 @@ export const EXAMINATION = {
   upravljačke i pogonske elektronike strojeva, vozila..`,
 };
 
-export type ContentType = {
-  id: number;
-  text: string;
-};
-
-export type HeroCardType = {
+export type SectionCardType = {
   title?: string;
   description?: string;
-  content: ContentType[];
-  image: any;
-  about: string;
+  content?: ContentType[];
+  image?: any;
+  about?: string;
 };
 
 export const REPAIRS = {

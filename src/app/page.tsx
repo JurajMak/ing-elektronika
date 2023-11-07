@@ -2,13 +2,15 @@
 import MainCard from '@/components/card/main-card';
 import Licence from '@/components/card/licence-card';
 import Carusel from '@/components/carusel';
-import HeroCard from '@/components/hero';
+import HeroCard from '@/components/card/section-card';
 import { EXAMINATION } from '@/data/home';
 import { REPAIRS } from '@/data/home';
 import { EQUIPMENT } from '@/data/equipment';
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Loader } from 'lucide-react';
+
+import SkeletonCard from '@/components/card/skeleton-card';
 
 export default function Home() {
   const [equipment, setEquipment] = React.useState(EQUIPMENT.slice(0, 3));
@@ -33,8 +35,10 @@ export default function Home() {
       const nextItems = EQUIPMENT.slice(equipment.length, equipment.length + 3);
       setEquipment([...equipment, ...nextItems]);
       setLoading(false);
-    }, 500);
+    }, 1000);
   };
+
+  const skeletor = Array(3).fill(null);
 
   return (
     <>
@@ -72,15 +76,23 @@ export default function Home() {
         </h3>
 
         {equipment.map((item) => (
-          <div className="col-span-3 mx-auto lg:col-span-4">
+          <div key={item.id} className="col-span-3 mx-auto lg:col-span-4">
             <MainCard
-              key={item.id}
               title={item.title}
               image={item.image}
               content={item.content}
             />
           </div>
         ))}
+        {isLoading && (
+          <>
+            {skeletor.map((index) => (
+              <div key={index} className="col-span-3 mx-auto lg:col-span-4">
+                <SkeletonCard />
+              </div>
+            ))}
+          </>
+        )}
       </div>
       <div className="w-full flex justify-center items-center ">
         {isLoading ? (

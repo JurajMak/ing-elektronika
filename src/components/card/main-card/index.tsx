@@ -10,7 +10,7 @@ import React from 'react';
 import Image from 'next/image';
 import { CardType } from '@/data/home';
 
-const MainCard = ({ title, image, content }: CardType) => {
+const MainCard = ({ title, image, content }: CardType<string>) => {
   return (
     <div className="mb-12">
       <Card className="w-full lg:w-[500px] ">

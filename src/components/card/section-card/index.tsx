@@ -8,15 +8,15 @@ import {
 import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
 import React from 'react';
-import { HeroCardType } from '@/data/home';
+import { ContentType, CardType } from '@/data/home';
 
-const HeroCard = ({
+const SectionCard = ({
   title,
   description,
   content,
   image,
   about,
-}: HeroCardType) => {
+}: CardType<ContentType[]>) => {
   return (
     <div className="mt-auto">
       <Card className="">
@@ -29,9 +29,7 @@ const HeroCard = ({
         <CardContent>
           <div className="mb-6 flex justify-between">
             <div>
-              {content.map((item) => (
-                <p key={item.id}>{item.text}</p>
-              ))}
+              {content?.map((item) => <p key={item.id}>{item.text}</p>)}
             </div>
             <Image
               src={image}
@@ -49,4 +47,4 @@ const HeroCard = ({
   );
 };
 
-export default HeroCard;
+export default SectionCard;
