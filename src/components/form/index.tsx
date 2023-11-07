@@ -6,10 +6,13 @@ import { Label } from '../ui/label';
 import { Textarea } from '../ui/textarea';
 import { Button } from '../ui/button';
 import { FormType } from '@/types';
+import { useToast } from '@/components/ui/use-toast';
 
 const KontaktForma = () => {
+  const { toast } = useToast();
   const form = useFormik<FormType>({
     initialValues: {
+      title: '',
       name: '',
       email: '',
       tel: '',
@@ -17,11 +20,44 @@ const KontaktForma = () => {
     },
     onSubmit: (values) => {
       console.log(values);
+      sendEmail(values);
     },
   });
 
+  async function sendEmail(formData: FormType) {
+    await fetch('/api/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: formData.description,
+      }),
+    }).then(() => {
+      // Toast notification
+      toast({
+        title: 'Upit uspješno poslan!',
+        description:
+          'Odgovoriti ćemo Vam u najbržem mogućem roku, hvala na strpljenu.',
+      });
+    });
+  }
+
   return (
     <form className="flex flex-col gap-8 mt-4 " onSubmit={form.handleSubmit}>
+      <div>
+        <Label htmlFor="title">Naslov upita</Label>
+        <Input
+          id="title"
+          name="title"
+          type="text"
+          value={form.values.title}
+          onChange={form.handleChange}
+        />
+      </div>
       <div>
         <Label htmlFor="name">Ime i Prezime</Label>
         <Input

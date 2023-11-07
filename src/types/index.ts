@@ -16,4 +16,5 @@ export type FormType = {
   email: string;
   tel: string;
   description: string;
+  title: string;
 };
