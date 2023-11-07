@@ -1,17 +1,5 @@
 import banner from '@/../public/assets/images/serv-banner.jpg';
 import fontele from '@/../public/assets/images/fontele.png';
-export type ContentType = {
-  id: number;
-  text: string;
-};
-
-export type CardType<T> = {
-  title?: string;
-  description?: string;
-  content?: T;
-  image?: any;
-  about?: string;
-};
 
 export const EXAMINATION = {
   title: 'Besplatan pregled uređaja',
@@ -19,14 +7,6 @@ export const EXAMINATION = {
   content: ` Ing-elektronika je nasuvremenije opremljen servis, što otvara
   mogućnost popravka sve danas dostupne elektronike uključujući i
   upravljačke i pogonske elektronike strojeva, vozila..`,
-};
-
-export type SectionCardType = {
-  title?: string;
-  description?: string;
-  content?: ContentType[];
-  image?: any;
-  about?: string;
 };
 
 export const REPAIRS = {

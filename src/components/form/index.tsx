@@ -5,7 +5,7 @@ import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Textarea } from '../ui/textarea';
 import { Button } from '../ui/button';
-import { FormType } from '@/types/form';
+import { FormType } from '@/types';
 
 const KontaktForma = () => {
   const form = useFormik<FormType>({
