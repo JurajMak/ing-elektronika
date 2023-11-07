@@ -18,3 +18,13 @@ export type FormType = {
   description: string;
   title: string;
 };
+
+export type ToastType = {
+  title: string;
+  description: string;
+};
+
+export type SendEmailType = {
+  formData: FormType;
+  toast: ToastType;
+};

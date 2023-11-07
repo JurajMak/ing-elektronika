@@ -14,13 +14,13 @@ const Email = ({ title, name, email, tel, description }: FormType) => {
       <Preview>{title}</Preview>
       <Tailwind>
         <Body className="bg-white my-auto mx-auto font-sans">
-          <Container>
+          <Container className='flex justify-center'>
             <Head />
 
-            <p>{description}</p>
-            <p>{name}</p>
-            <p>{tel}</p>
-            <Text>{email}</Text>
+            <Text>{description}</Text>
+            <Text>Ime i prezime {name}</Text>
+            <Text>Tel :{tel}</Text>
+            <Text> email:{email}</Text>
           </Container>
         </Body>
       </Tailwind>

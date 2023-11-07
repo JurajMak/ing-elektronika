@@ -7,9 +7,11 @@ import { Textarea } from '../ui/textarea';
 import { Button } from '../ui/button';
 import { FormType } from '@/types';
 import { useToast } from '@/components/ui/use-toast';
+// import { sendEmail } from '@/utils/sendEmail';
 
 const KontaktForma = () => {
   const { toast } = useToast();
+
   const form = useFormik<FormType>({
     initialValues: {
       title: '',
@@ -18,9 +20,9 @@ const KontaktForma = () => {
       tel: '',
       description: '',
     },
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       console.log(values);
-      sendEmail(values);
+      await sendEmail(values);
     },
   });
 
@@ -32,12 +34,13 @@ const KontaktForma = () => {
       },
 
       body: JSON.stringify({
+        title: formData.title,
         name: formData.name,
         email: formData.email,
-        message: formData.description,
+        tel: formData.tel,
+        description: formData.description,
       }),
     }).then(() => {
-      // Toast notification
       toast({
         title: 'Upit uspješno poslan!',
         description:
@@ -47,7 +50,13 @@ const KontaktForma = () => {
   }
 
   return (
-    <form className="flex flex-col gap-8 mt-4 " onSubmit={form.handleSubmit}>
+    <form
+      className="flex flex-col gap-8 mt-4 "
+      onSubmit={(e) => {
+        e.preventDefault();
+        form.handleSubmit();
+      }}
+    >
       <div>
         <Label htmlFor="title">Naslov upita</Label>
         <Input
