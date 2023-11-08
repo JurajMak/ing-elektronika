@@ -79,7 +79,7 @@ export default function Home() {
             />
           </div>
         ))}
-        {!isLoading && (
+        {isLoading && (
           <>
             {skeletor.map((index) => (
               <div key={index} className="col-span-6 mx-auto  xl:col-span-3">
