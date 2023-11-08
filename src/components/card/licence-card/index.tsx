@@ -16,7 +16,7 @@ const Licence = () => {
     <div className="mb-12 flex flex-col items-center">
       <h1 className="text-3xl font-medium">Ovlašteni servis</h1>
       <div className="mt-2 flex flex-col lg:flex-row justify-center gap-12">
-        <div className=" w-full lg:w-[400px] flex flex-col items-center bg-white rounded-xl p-6  ">
+        <div className="w-full xl:w-[400px] flex flex-col items-center bg-white rounded-xl p-6  ">
           <Image
             src={kenwood}
             alt="banner"
@@ -24,11 +24,11 @@ const Licence = () => {
             className="rounded-2xl m-auto"
           />
         </div>
-        <div className="w-[400px] flex flex-col items-center bg-white rounded-xl  ">
+        <div className="w-full lg:w-[400px] flex flex-col items-center bg-white rounded-xl  ">
           <Image
             src={xiaomi}
             alt="banner"
-            width={250}
+            width={300}
             className="rounded m-auto"
           />
         </div>

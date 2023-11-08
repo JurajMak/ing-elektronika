@@ -3,7 +3,7 @@ import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import React from 'react';
 
-const Kontakt = () => {
+const Contact = () => {
   return (
     <div className=" grid grid-cols-12">
       <div className="col-start-2 col-span-10 lg:col-start-4 lg:col-span-5 mt-24 ">
@@ -19,4 +19,4 @@ const Kontakt = () => {
   );
 };
 
-export default Kontakt;
+export default Contact;

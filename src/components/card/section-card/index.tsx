@@ -8,7 +8,7 @@ import {
 import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
 import React from 'react';
-import { ContentType, CardType } from '@/data/home';
+import { CardType, ContentType } from '@/types';
 
 const SectionCard = ({
   title,
@@ -19,7 +19,7 @@ const SectionCard = ({
 }: CardType<ContentType[]>) => {
   return (
     <div className="mt-auto">
-      <Card className="">
+      <Card>
         <CardHeader>
           <CardTitle>{title}</CardTitle>
           <CardDescription>{description}</CardDescription>
@@ -27,7 +27,7 @@ const SectionCard = ({
         </CardHeader>
 
         <CardContent>
-          <div className="mb-6 flex justify-between">
+          <div className="mb-6 flex flex-col lg:flex-row justify-between">
             <div>
               {content?.map((item) => <p key={item.id}>{item.text}</p>)}
             </div>
@@ -36,7 +36,7 @@ const SectionCard = ({
               alt="fontele"
               width={250}
               height={250}
-              className="m-auto"
+              className="m-auto mt-12 lg:mt-0"
             />
           </div>
 

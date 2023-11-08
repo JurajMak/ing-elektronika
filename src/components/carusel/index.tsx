@@ -8,10 +8,12 @@ import imageTwo from '@/../public/assets/images/aparati.jpg';
 import imageThree from '@/../public/assets/images/radni-stol.jpg';
 import imageFour from '@/../public/assets/images/servis.jpg';
 import Autoplay from 'embla-carousel-autoplay';
+import AutoHeight from 'embla-carousel-auto-height';
 
 const Carusel = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 2000 }),
+    AutoHeight({ destroyHeight: 'auto' }),
   ]);
 
   const images = [imageOne, imageTwo, imageThree, imageFour];
