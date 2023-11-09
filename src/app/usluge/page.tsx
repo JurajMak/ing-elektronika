@@ -1,4 +1,4 @@
-import SectionCard from '@/components/card/section-card';
+import SectionCard from '@/components/cards/section-card';
 import React from 'react';
 import {
   AUDIO_SERVICES,

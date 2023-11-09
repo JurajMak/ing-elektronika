@@ -1,16 +1,19 @@
 'use client';
-import MainCard from '@/components/card/main-card';
-import Licence from '@/components/card/licence-card';
+
 import Carusel from '@/components/carusel';
-import SectionCard from '@/components/card/section-card';
 import { EXAMINATION } from '@/data/home';
 import { REPAIRS } from '@/data/home';
 import { EQUIPMENT } from '@/data/equipment';
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Loader } from 'lucide-react';
-
-import SkeletonCard from '@/components/card/skeleton-card';
+import LicenceCard from '@/components/cards/licence-card';
+import MainCard from '@/components/cards/main-card';
+import SectionCard from '@/components/cards/section-card';
+import SkeletonCard from '@/components/cards/skeleton-card';
+import Image from 'next/image';
+import electronics from '@/../public/assets/images/electronics_two.jpg';
+import { CAROUSEL_DATA } from '@/data/carousel';
 
 export default function Home() {
   const [equipment, setEquipment] = React.useState(EQUIPMENT.slice(0, 4));
@@ -41,18 +44,33 @@ export default function Home() {
 
   return (
     <>
+      <div className="relative h-screen flex items-center justify-center col-span-6 lg:col-span-12">
+        <Image
+          src={electronics}
+          alt="Hero Image"
+          className="absolute inset-0 object-cover w-full h-full"
+        />
+
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="text-center z-10">
+          <h1 className="text-4xl font-semibold mb-4">Your Hero Title</h1>
+          <p className="text-lg">Your catchy subtitle goes here.</p>
+        </div>
+      </div>
+
       <div className="grid grid-cols-6 lg:grid-cols-12 gap-6 my-12 ">
         <div className="col-span-6 px-4  lg:col-start-2 lg:col-span-10">
-          <Licence />
+          <LicenceCard />
         </div>
+
         <div className="col-span-6 px-4 lg:col-start-2 lg:col-span-10">
           <div className="flex flex-col  justify-between gap-12 lg:flex-row ">
-            <Carusel />
             <MainCard
               title={EXAMINATION.title}
               image={EXAMINATION.image}
               content={EXAMINATION.content}
             />
+            <Carusel />
           </div>
         </div>
 

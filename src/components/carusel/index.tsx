@@ -18,7 +18,7 @@ const Carusel = () => {
 
   const images = [imageOne, imageTwo, imageThree, imageFour];
   return (
-    <div className="embla rounded-lg w-full  " ref={emblaRef}>
+    <div className="embla rounded-lg w-full" ref={emblaRef}>
       <div className="embla__container">
         {images.map((item, index) => (
           <Image
@@ -33,7 +33,6 @@ const Carusel = () => {
         ))}
       </div>
     </div>
-    // <div>HOME</div>
   );
 };
 

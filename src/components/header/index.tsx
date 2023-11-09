@@ -16,7 +16,7 @@ const DynamicNavModal = dynamic(() =>
 const Header = () => {
   const [opened, setOpened] = React.useState<boolean>(false);
   return (
-    <header className="bg-background sticky top-0 z-40 w-full border-b">
+    <header className="backdrop-blur sticky top-0 z-40 w-full border-b">
       <div className="container flex  h-20 items-center space-x-4 sm:justify-between sm:space-x-0">
         <div className="mx-auto gap-x-24 lg:mx-0 flex items-center justify-between">
           <Link href="/">

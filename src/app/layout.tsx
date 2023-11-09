@@ -5,7 +5,7 @@ import Header from '@/components/header';
 import Providers from '@/components/providers';
 import Footer from '@/components/footer';
 
-const inter = Raleway({ subsets: ['latin'] });
+const raleway = Raleway({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Ing-Elektronika',
@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={raleway.className}>
         <Providers>
           <Header />
           {children}
