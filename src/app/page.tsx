@@ -14,12 +14,13 @@ import SkeletonCard from '@/components/cards/skeleton-card';
 import Image from 'next/image';
 import electronics from '@/../public/assets/images/electronics_two.jpg';
 import { CAROUSEL_DATA } from '@/data/carousel';
+import EmblaCarousel from '@/components/carusel/hero-carousel';
+import { EmblaOptionsType } from 'embla-carousel-react';
 
 export default function Home() {
   const [equipment, setEquipment] = React.useState(EQUIPMENT.slice(0, 4));
   const [isLoading, setLoading] = React.useState(false);
 
-  // bez loadinga
   // const loadMoreItems = () => {
   //   const nextItems = EQUIPMENT.slice(equipment.length, equipment.length + 3);
   //   setEquipment([...equipment, ...nextItems]);
@@ -44,7 +45,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="relative h-screen flex items-center justify-center col-span-6 lg:col-span-12">
+      {/* <div className="relative h-screen flex items-center justify-center col-span-6 lg:col-span-12">
         <Image
           src={electronics}
           alt="Hero Image"
@@ -53,10 +54,10 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="text-center z-10">
-          <h1 className="text-4xl font-semibold mb-4">Your Hero Title</h1>
-          <p className="text-lg">Your catchy subtitle goes here.</p>
+          <h1 className="text-4xl font-semibold mb-4">Neki naslov</h1>
+          <p className="text-lg">Neki tekst</p>
         </div>
-      </div>
+      </div> */}
 
       <div className="grid grid-cols-6 lg:grid-cols-12 gap-6 my-12 ">
         <div className="col-span-6 px-4  lg:col-start-2 lg:col-span-10">
