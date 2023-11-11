@@ -9,8 +9,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: 45.54969,
-  lng: 18.67834,
+  lat: 45.549676,
+  lng: 18.678324,
 };
 
 export function Map() {
@@ -53,7 +53,9 @@ export function Map() {
               position: google.maps.ControlPosition.TOP_CENTER,
             },
           }}
-        ></GoogleMap>
+        >
+          <MarkerF position={center} />
+        </GoogleMap>
       )}
     </>
   );

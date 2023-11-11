@@ -2,7 +2,6 @@ import React from 'react';
 import { AtSign, Clock, Phone, Facebook } from 'lucide-react';
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 const ContactCard = () => {
   return (
     <Card className="grid grid-cols-6 gap-4 p-4 w-full h-[400px] items-center">
@@ -46,13 +45,13 @@ const ContactCard = () => {
         href="https://www.facebook.com/Ingelektronika"
         className="col-start-2 col-span-5 flex items-center "
       >
-        <p className="font-bold text-[#4267B2] mr-6 text-xl mb-2">
-          Pratite nas{' '}
+        <p className="font-bold text-[#4267B2] dark:text-foreground mr-6 text-xl mb-2">
+          Pratite nas
         </p>
         <Facebook
           size={30}
           // className="bg-primary text-secondary p-1 rounded "
-          className="bg-[#4267B2] text-secondary p-1 rounded dark:text-[#4267B2] dark:bg-[white] "
+          className="bg-[#4267B2] text-secondary p-1 rounded dark:text-[#4267B2] dark:bg-foreground"
         />
       </Link>
     </Card>

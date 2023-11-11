@@ -12,10 +12,8 @@ import MainCard from '@/components/cards/main-card';
 import SectionCard from '@/components/cards/section-card';
 import SkeletonCard from '@/components/cards/skeleton-card';
 import Image from 'next/image';
-import electronics from '@/../public/assets/images/electronics_two.jpg';
-import { CAROUSEL_DATA } from '@/data/carousel';
-import EmblaCarousel from '@/components/carusel/hero-carousel';
-import { EmblaOptionsType } from 'embla-carousel-react';
+import electronics from '@/../public/assets/images/electronic-technician-holds-two-identical-smartphones-comparison-one-hand-broken-another-new.jpg';
+import banner from '@/../public/assets/images/top-view-master-works-broken-tablet-repair-it-near-tool-bag-wooden-table-service-lab.jpg';
 
 export default function Home() {
   const [equipment, setEquipment] = React.useState(EQUIPMENT.slice(0, 6));
@@ -45,26 +43,27 @@ export default function Home() {
 
   return (
     <>
-      {/* <div className="relative h-screen flex items-center justify-center col-span-6 lg:col-span-12">
+      <div className="relative h-[70vh] flex items-center justify-center col-span-6 lg:col-span-12 mb-52">
         <Image
           src={electronics}
           alt="Hero Image"
-          className="absolute inset-0 object-cover w-full h-full"
+          className="absolute inset-0 object-cover w-full h-full top-0 "
+          priority
         />
 
-        <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="text-center z-10">
-          <h1 className="text-4xl font-semibold mb-4">Neki naslov</h1>
-          <p className="text-lg">Neki tekst</p>
+        <div className="absolute inset-0 bg-black opacity-40">
+          {/* <h1 className="text-4xl font-semibold mb-4">Neki naslov</h1>
+          <p className="text-lg">Neki tekst</p> */}
         </div>
-      </div> */}
+        <div className="text-center z-10 absolute -bottom-56 ">
+          <div className="col-span-6 px-4 my-24 lg:col-start-2 lg:col-span-10   ">
+            <LicenceCard />
+          </div>
+        </div>
+      </div>
 
       <div className="grid grid-cols-6 lg:grid-cols-12 gap-6 my-12 ">
-        <div className="col-span-6 px-4 my-24 lg:col-start-2 lg:col-span-10   ">
-          <LicenceCard />
-        </div>
-
-        <div className="col-span-6 px-4 lg:col-start-2 lg:col-span-10">
+        <div className="col-span-6 px-4 lg:col-start-2 lg:col-span-10 my-36">
           <div className="flex flex-col justify-between gap-12 lg:flex-row ">
             <MainCard
               title={EXAMINATION.title}
@@ -74,6 +73,21 @@ export default function Home() {
             <Carusel />
           </div>
         </div>
+        {/* <div className="col-span-6  lg:col-span-12">
+          <div className="relative h-[70vh] flex items-center justify-center col-span-6 lg:col-span-12 mb-52 ">
+            <Image
+              src={banner}
+              alt="Hero Image"
+              className="absolute inset-0 object-cover w-full h-full top-0 "
+              priority
+            />
+
+            <div className="absolute inset-0 bg-black opacity-40"></div>
+            <div className="text-center z-10 absolute -bottom-56 ">
+           
+            </div>
+          </div>
+        </div> */}
 
         <div className="col-span-6 px-4  lg:col-start-2 lg:col-span-10 my-24">
           <SectionCard

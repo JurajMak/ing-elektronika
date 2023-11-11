@@ -16,13 +16,13 @@ const DynamicNavModal = dynamic(() =>
 const Header = () => {
   const [opened, setOpened] = React.useState<boolean>(false);
   return (
-    <header className="backdrop-blur sticky top-0 z-40 w-full border-b">
+    <header className="bg-background sticky top-0 z-40 w-full border-b">
       <div className="container flex  h-20 items-center space-x-4 sm:justify-between sm:space-x-0">
-        <div className="mx-auto gap-x-24 lg:mx-0 flex items-center justify-between">
+        <div className="mx-auto lg:mx-0 flex items-center justify-between">
           <Link href="/">
             <div className="flex items-center gap-6">
               <Cable size={30} />
-              <h1 className="text-3xl hidden lg:block">Ing-Elektronika</h1>
+              <h1 className="text-2xl  lg:block">Ing-Elektronika</h1>
             </div>
           </Link>
           <Button
