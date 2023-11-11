@@ -26,8 +26,8 @@ const Carusel = () => {
             key={index}
             src={item}
             alt="image"
-            width={300}
-            height={300}
+            width={1200}
+            height={900}
             className="embla__slide"
           ></Image>
         ))}

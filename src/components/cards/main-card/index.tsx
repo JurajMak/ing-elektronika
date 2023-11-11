@@ -12,25 +12,23 @@ import { CardType } from '@/types';
 
 const MainCard = ({ title, image, content }: CardType<string>) => {
   return (
-    <div className="my-12">
-      <Card className="w-full max-w-lg ">
-        <CardHeader>
-          <CardTitle className="mb-2">{title}</CardTitle>
-          <CardDescription>
-            <Image
-              src={image}
-              alt="banner"
-              height={500}
-              className="rounded"
-              priority
-            />
-          </CardDescription>
-        </CardHeader>
-        <Separator />
+    <Card className="w-full max-w-lg ">
+      <CardHeader className="mb-2">
+        <CardTitle className="mb-2">{title}</CardTitle>
+        <CardDescription>
+          <Image
+            src={image}
+            alt="banner"
+            height={500}
+            className="rounded"
+            priority
+          />
+        </CardDescription>
+      </CardHeader>
+      <Separator />
 
-        <CardContent className="mt-2">{content}</CardContent>
-      </Card>
-    </div>
+      <CardContent className="mt-4">{content}</CardContent>
+    </Card>
   );
 };
 
