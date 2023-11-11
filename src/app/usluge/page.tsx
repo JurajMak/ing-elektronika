@@ -3,6 +3,7 @@ import React from 'react';
 import { SERVICES } from '@/data/services';
 
 const Services = () => {
+  console.log(SERVICES.length);
   return (
     <div className="grid grid-cols-6 px-6 lg:grid-cols-12 gap-6 my-12 ">
       {SERVICES.map((item, index) => (

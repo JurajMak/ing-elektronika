@@ -18,7 +18,7 @@ import EmblaCarousel from '@/components/carusel/hero-carousel';
 import { EmblaOptionsType } from 'embla-carousel-react';
 
 export default function Home() {
-  const [equipment, setEquipment] = React.useState(EQUIPMENT.slice(0, 4));
+  const [equipment, setEquipment] = React.useState(EQUIPMENT.slice(0, 6));
   const [isLoading, setLoading] = React.useState(false);
 
   // const loadMoreItems = () => {
@@ -35,13 +35,13 @@ export default function Home() {
     setLoading(true);
 
     setTimeout(() => {
-      const nextItems = EQUIPMENT.slice(equipment.length, equipment.length + 4);
+      const nextItems = EQUIPMENT.slice(equipment.length, equipment.length + 6);
       setEquipment([...equipment, ...nextItems]);
       setLoading(false);
     }, 1000);
   };
 
-  const skeletor = Array(4).fill(null);
+  const skeletor = Array(3).fill(null);
 
   return (
     <>
@@ -60,12 +60,12 @@ export default function Home() {
       </div> */}
 
       <div className="grid grid-cols-6 lg:grid-cols-12 gap-6 my-12 ">
-        <div className="col-span-6 px-4  lg:col-start-2 lg:col-span-10">
+        <div className="col-span-6 px-4 my-24 lg:col-start-2 lg:col-span-10   ">
           <LicenceCard />
         </div>
 
         <div className="col-span-6 px-4 lg:col-start-2 lg:col-span-10">
-          <div className="flex flex-col  justify-between gap-12 lg:flex-row ">
+          <div className="flex flex-col justify-between gap-12 lg:flex-row ">
             <MainCard
               title={EXAMINATION.title}
               image={EXAMINATION.image}
@@ -75,7 +75,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="col-span-6 px-4  lg:col-start-2 lg:col-span-10 my-12">
+        <div className="col-span-6 px-4  lg:col-start-2 lg:col-span-10 my-24">
           <SectionCard
             title={REPAIRS.title}
             about={REPAIRS.about}
@@ -85,12 +85,12 @@ export default function Home() {
           />
         </div>
 
-        <h3 className="col-span-6 px-6   lg:col-start-2 lg:col-span-10 text-2xl  font-semibold">
+        <h3 className="col-span-6 px-6 my-12  lg:col-start-2 lg:col-span-10 text-3xl  font-semibold">
           Cjelokupna oprema za dijagnostiku
         </h3>
 
         {equipment.map((item) => (
-          <div key={item.id} className="col-span-6 mx-auto px-6  xl:col-span-3">
+          <div key={item.id} className="col-span-6 mx-auto px-6 lg:col-span-4">
             <MainCard
               title={item.title}
               image={item.image}
@@ -101,7 +101,7 @@ export default function Home() {
         {isLoading && (
           <>
             {skeletor.map((index) => (
-              <div key={index} className="col-span-6 mx-auto  xl:col-span-3">
+              <div key={index} className="col-span-6 mx-auto lg:col-span-4">
                 <SkeletonCard />
               </div>
             ))}

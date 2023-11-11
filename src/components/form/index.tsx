@@ -7,7 +7,9 @@ import { Textarea } from '../ui/textarea';
 import { Button } from '../ui/button';
 import { FormType } from '@/types';
 import { useToast } from '@/components/ui/use-toast';
+import { FORM_SCHEMA } from './schema';
 // import { sendEmail } from '@/utils/sendEmail';
+import FormError from './form-error';
 
 const KontaktForma = () => {
   const { toast } = useToast();
@@ -20,9 +22,10 @@ const KontaktForma = () => {
       tel: '',
       description: '',
     },
+    validationSchema: FORM_SCHEMA,
     onSubmit: async (values) => {
+      // await sendEmail(values);
       console.log(values);
-      await sendEmail(values);
     },
   });
 
@@ -40,13 +43,20 @@ const KontaktForma = () => {
         tel: formData.tel,
         description: formData.description,
       }),
-    }).then(() => {
-      toast({
-        title: 'Upit uspješno poslan!',
-        description:
-          'Odgovoriti ćemo Vam u najbržem mogućem roku, hvala na strpljenu.',
+    })
+      .then(() => {
+        toast({
+          title: 'Upit uspješno poslan!',
+          description:
+            'Odgovoriti ćemo Vam u najbržem mogućem roku, hvala na strpljenu.',
+        });
+      })
+      .catch((error) => {
+        toast({
+          title: `${error} se dogodio`,
+          description: 'Molimo Vas pokušajte ponovno',
+        });
       });
-    });
   }
 
   return (
@@ -66,6 +76,9 @@ const KontaktForma = () => {
           value={form.values.title}
           onChange={form.handleChange}
         />
+        {form.errors.title && form.touched.title && (
+          <FormError errors={form.errors.title} />
+        )}
       </div>
       <div>
         <Label htmlFor="name">Ime i Prezime</Label>
@@ -76,6 +89,9 @@ const KontaktForma = () => {
           value={form.values.name}
           onChange={form.handleChange}
         />
+        {form.errors.name && form.touched.name && (
+          <FormError errors={form.errors.name} />
+        )}
       </div>
       <div>
         <Label htmlFor="email">Email</Label>
@@ -86,6 +102,9 @@ const KontaktForma = () => {
           value={form.values.email}
           onChange={form.handleChange}
         />
+        {form.errors.email && form.touched.email && (
+          <FormError errors={form.errors.email} />
+        )}
       </div>
       <div>
         <Label htmlFor="tel">Telefon</Label>
@@ -96,6 +115,9 @@ const KontaktForma = () => {
           value={form.values.tel}
           onChange={form.handleChange}
         />
+        {form.errors.tel && form.touched.tel && (
+          <FormError errors={form.errors.tel} />
+        )}
       </div>
       <div>
         <Label htmlFor="description">Opis </Label>
@@ -104,6 +126,9 @@ const KontaktForma = () => {
           name="description"
           onChange={form.handleChange}
         />
+        {form.errors.description && form.touched.description && (
+          <FormError errors={form.errors.description} />
+        )}
       </div>
       <div>
         <Button type="submit">Pošalji</Button>

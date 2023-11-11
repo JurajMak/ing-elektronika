@@ -10,26 +10,19 @@ import React from 'react';
 
 const SkeletonCard = () => {
   return (
-    <Card className="w-[90vw] lg:w-[400px] ">
+    <Card className="w-[90vw] md:w-[500px] lg:w-[300px] xl:w-[400px]  ">
       <CardHeader>
-        <div>
-          <Skeleton className="h-12" />
-        </div>
+        <Skeleton className="h-12" />
 
-        <CardDescription>
-          <div>
-            <Skeleton className="h-56" />
-          </div>
-        </CardDescription>
+        {/* <CardDescription> */}
+        <Skeleton className="h-56" />
+        {/* </CardDescription> */}
       </CardHeader>
-      <div>
-        <Skeleton className="h-[0.1rem]" />
-      </div>
+
+      <Skeleton className="h-[0.1rem]" />
 
       <CardContent className="mt-2">
-        <div>
-          <Skeleton className="h-12" />
-        </div>
+        <Skeleton className="h-12" />
       </CardContent>
     </Card>
   );
