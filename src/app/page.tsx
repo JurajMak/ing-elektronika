@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="relative h-[70vh] flex items-center justify-center col-span-6 lg:col-span-12 mb-52">
+      <div className="relative h-[70vh] flex items-center justify-center col-span-6 lg:col-span-12 mb-24 xl:mb-52">
         <Image
           src={electronics}
           alt="Hero Image"
@@ -62,8 +62,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="grid grid-cols-6 lg:grid-cols-12 gap-6 my-12 ">
-        <div className="col-span-6 px-4 lg:col-start-2 lg:col-span-10 my-36">
+      <div className="grid grid-cols-6 lg:grid-cols-12 gap-6 mt-12 xl:my-24 ">
+        <div className="col-span-6 px-4 lg:col-start-2 lg:col-span-10 my-16 xl:my-36 ">
           <div className="flex flex-col justify-between gap-12 lg:flex-row ">
             <MainCard
               title={EXAMINATION.title}
@@ -89,7 +89,7 @@ export default function Home() {
           </div>
         </div> */}
 
-        <div className="col-span-6 px-4  lg:col-start-2 lg:col-span-10 my-24">
+        <div className="col-span-6 px-4 lg:col-start-2 lg:col-span-10 xl:mb-36">
           <SectionCard
             title={REPAIRS.title}
             about={REPAIRS.about}
@@ -131,7 +131,9 @@ export default function Home() {
         ) : (
           <Button
             onClick={loadMoreItems}
-            className={`${equipment.length === EQUIPMENT.length && 'hidden'}`}
+            className={`${
+              equipment.length === EQUIPMENT.length && 'hidden'
+            } mb-12`}
           >
             Učitaj još
           </Button>

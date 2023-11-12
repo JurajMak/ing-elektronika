@@ -12,7 +12,7 @@ import { CardType } from '@/types';
 
 const MainCard = ({ title, image, content }: CardType<string>) => {
   return (
-    <Card className="w-full max-w-lg ">
+    <Card className="w-full max-w-lg mb-6">
       <CardHeader className="mb-2">
         <CardTitle className="mb-2">{title}</CardTitle>
         <CardDescription>

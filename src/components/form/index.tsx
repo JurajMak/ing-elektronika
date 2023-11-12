@@ -24,8 +24,7 @@ const KontaktForma = () => {
     },
     validationSchema: FORM_SCHEMA,
     onSubmit: async (values) => {
-      // await sendEmail(values);
-      console.log(values);
+      await sendEmail(values);
     },
   });
 
