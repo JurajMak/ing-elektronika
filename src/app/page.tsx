@@ -62,7 +62,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="grid grid-cols-6 lg:grid-cols-12 gap-6 mt-12 xl:my-24 ">
+      <div className="grid grid-cols-6 lg:grid-cols-12 gap-6 my-36 xl:my-24 ">
         <div className="col-span-6 px-4 lg:col-start-2 lg:col-span-10 my-16 xl:my-36 ">
           <div className="flex flex-col justify-between gap-12 lg:flex-row ">
             <MainCard

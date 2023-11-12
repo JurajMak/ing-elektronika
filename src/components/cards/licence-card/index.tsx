@@ -6,7 +6,7 @@ import xiaomi from '@/../public/assets/images/XiaomiLogoNew2.png';
 const LicenceCard = () => {
   return (
     <div className="mb-12 flex flex-col items-center">
-      <h1 className="text-4xl text-secondary dark:text-[white] font-semibold">
+      <h1 className="text-4xl text-secondary dark:text-[white] font-semibold mb-6 ">
         Ovlašteni servis
       </h1>
       <div className="mt-2 flex flex-col lg:flex-row justify-center gap-12">
