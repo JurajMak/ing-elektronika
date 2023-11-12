@@ -49,6 +49,7 @@ const KontaktForma = () => {
           description:
             'Odgovoriti ćemo Vam u najbržem mogućem roku, hvala na strpljenu.',
         });
+        form.resetForm();
       })
       .catch((error) => {
         toast({
@@ -123,6 +124,7 @@ const KontaktForma = () => {
         <Textarea
           id="description"
           name="description"
+          value={form.values.description}
           onChange={form.handleChange}
         />
         {form.errors.description && form.touched.description && (
