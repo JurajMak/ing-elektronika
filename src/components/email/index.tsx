@@ -5,7 +5,7 @@ import { Text } from '@react-email/text';
 import { Html } from '@react-email/html';
 import { FormType } from '@/types';
 import { Preview } from '@react-email/preview';
-import { Body, Tailwind } from '@react-email/components';
+import { Body, Heading, Hr, Tailwind } from '@react-email/components';
 
 const Email = ({ title, name, email, tel, description }: FormType) => {
   return (
@@ -14,13 +14,19 @@ const Email = ({ title, name, email, tel, description }: FormType) => {
       <Preview>{title}</Preview>
       <Tailwind>
         <Body className="bg-white my-auto mx-auto font-sans">
-          <Container className='flex justify-center'>
-            <Head />
+          
+        <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
+        <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
+        {title}
+      </Heading>
+      <Hr />
 
-            <Text>{description}</Text>
-            <Text>Ime i prezime {name}</Text>
-            <Text>Tel :{tel}</Text>
-            <Text> email:{email}</Text>
+            <Text className="text-black text-[14px] leading-[24px]">
+              {description}</Text>
+            <Text className="text-black text-[14px] leading-[24px]">Ime i prezime {name}</Text>
+            <Text className="text-black text-[14px] leading-[24px]">Tel :{tel}</Text>
+            <Text className="text-black text-[14px] leading-[24px]">Email</Text>
+            <Text className="text-black text-[14px] leading-[24px]"> {email}</Text>
           </Container>
         </Body>
       </Tailwind>
@@ -29,3 +35,7 @@ const Email = ({ title, name, email, tel, description }: FormType) => {
 };
 
 export default Email;
+
+
+
+

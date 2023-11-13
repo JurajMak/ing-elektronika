@@ -60,6 +60,7 @@ const KontaktForma = () => {
           title: `${error}`,
           description: 'Molimo Vas pokušajte ponovno',
         });
+        setLoading(false);
       });
   }
 
@@ -136,8 +137,8 @@ const KontaktForma = () => {
         )}
       </div>
       <div>
-        <Button type="submit" disabled={!loading}>
-          {!loading ? (
+        <Button type="submit" disabled={loading}>
+          {loading ? (
             <>
               <Loader className="mr-2 h-4 w-4 animate-spin" />
               Slanje
