@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
       react: Email({ title, name, tel, email, description }),
     });
 
-    return NextResponse.json(data);
+    return NextResponse.json({data});
   } catch (error) {
     return NextResponse.json({ error });
   }

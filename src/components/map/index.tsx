@@ -25,7 +25,6 @@ export function Map() {
   });
 
   const [map, setMap] = React.useState(null);
-  console.log(map, 'map');
 
   const onLoad = React.useCallback(function callback(map: any) {
     const bounds = new window.google.maps.LatLngBounds(center);
