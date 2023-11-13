@@ -106,6 +106,7 @@ export default function Home() {
         {equipment.map((item) => (
           <div key={item.id} className="col-span-6 mx-auto px-6 lg:col-span-4">
             <MainCard
+              key={item.id}
               title={item.title}
               image={item.image}
               content={item.content}
@@ -114,8 +115,11 @@ export default function Home() {
         ))}
         {isLoading && (
           <>
-            {skeletor.map((index) => (
-              <div key={index} className="col-span-6 mx-auto lg:col-span-4">
+            {skeletor.map((_, index) => (
+              <div
+                key={`skeleton_${index}`}
+                className="col-span-6 mx-auto lg:col-span-4"
+              >
                 <SkeletonCard />
               </div>
             ))}
@@ -123,21 +127,23 @@ export default function Home() {
         )}
       </div>
       <div className="w-full flex justify-center items-center ">
-        {isLoading ? (
-          <Button disabled>
-            <Loader className="mr-2 h-4 w-4 animate-spin" />
-            Učitavanje
-          </Button>
-        ) : (
-          <Button
-            onClick={loadMoreItems}
-            className={`${
-              equipment.length === EQUIPMENT.length && 'hidden'
-            } mb-12`}
-          >
-            Učitaj još
-          </Button>
-        )}
+        <Button
+          type="submit"
+          disabled={isLoading}
+          onClick={loadMoreItems}
+          className={`${
+            equipment.length === EQUIPMENT.length && 'hidden'
+          } mb-12`}
+        >
+          {isLoading ? (
+            <>
+              <Loader className="mr-2 h-4 w-4 animate-spin" />
+              Učitavanje
+            </>
+          ) : (
+            'Učitaj još'
+          )}
+        </Button>
       </div>
     </>
   );

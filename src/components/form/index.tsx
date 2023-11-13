@@ -10,9 +10,11 @@ import { useToast } from '@/components/ui/use-toast';
 import { FORM_SCHEMA } from './schema';
 // import { sendEmail } from '@/utils/sendEmail';
 import FormError from './form-error';
+import { Loader } from 'lucide-react';
 
 const KontaktForma = () => {
   const { toast } = useToast();
+  const [loading, setLoading] = React.useState(false);
 
   const form = useFormik<FormType>({
     initialValues: {
@@ -29,6 +31,7 @@ const KontaktForma = () => {
   });
 
   async function sendEmail(formData: FormType) {
+    setLoading(true);
     await fetch('/api/send', {
       method: 'POST',
       headers: {
@@ -50,10 +53,11 @@ const KontaktForma = () => {
             'Odgovoriti ćemo Vam u najbržem mogućem roku, hvala na strpljenu.',
         });
         form.resetForm();
+        setLoading(false);
       })
       .catch((error) => {
         toast({
-          title: `${error} se dogodio`,
+          title: `${error}`,
           description: 'Molimo Vas pokušajte ponovno',
         });
       });
@@ -68,7 +72,7 @@ const KontaktForma = () => {
       }}
     >
       <div>
-        <Label htmlFor="title">Naslov upita</Label>
+        <Label htmlFor="title">Naslov</Label>
         <Input
           id="title"
           name="title"
@@ -132,7 +136,16 @@ const KontaktForma = () => {
         )}
       </div>
       <div>
-        <Button type="submit">Pošalji</Button>
+        <Button type="submit" disabled={!loading}>
+          {!loading ? (
+            <>
+              <Loader className="mr-2 h-4 w-4 animate-spin" />
+              Slanje
+            </>
+          ) : (
+            'Pošalji'
+          )}
+        </Button>
       </div>
     </form>
   );

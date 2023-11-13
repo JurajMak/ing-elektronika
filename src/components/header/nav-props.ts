@@ -5,7 +5,7 @@ export type Navtype = {
 };
 
 export const NAV_PROPS: Navtype[] = [
-  { path: '/', label: 'Naslovnica' },
+  { path: '/', label: 'Naslovna' },
   { path: '/usluge', label: 'Usluge' },
   { path: '/kontakt', label: 'Kontakt' },
 ];
