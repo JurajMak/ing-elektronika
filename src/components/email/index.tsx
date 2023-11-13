@@ -14,19 +14,24 @@ const Email = ({ title, name, email, tel, description }: FormType) => {
       <Preview>{title}</Preview>
       <Tailwind>
         <Body className="bg-white my-auto mx-auto font-sans">
-          
-        <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
-        <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
-        {title}
-      </Heading>
-      <Hr />
+          <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
+            <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
+              {title}
+            </Heading>
+            <Hr />
 
             <Text className="text-black text-[14px] leading-[24px]">
-              {description}</Text>
-            <Text className="text-black text-[14px] leading-[24px]">Ime i prezime {name}</Text>
-            <Text className="text-black text-[14px] leading-[24px]">Tel :{tel}</Text>
-            <Text className="text-black text-[14px] leading-[24px]">Email</Text>
-            <Text className="text-black text-[14px] leading-[24px]"> {email}</Text>
+              {description}
+            </Text>
+            <Text> Kontakt </Text>
+            <Text className="text-black text-[14px] leading-[24px]">
+              {name}
+            </Text>
+            <Text className="text-black text-[14px] leading-[24px]">{tel}</Text>
+
+            <Text className="text-black text-[14px] leading-[24px]">
+              {email}
+            </Text>
           </Container>
         </Body>
       </Tailwind>
@@ -35,7 +40,3 @@ const Email = ({ title, name, email, tel, description }: FormType) => {
 };
 
 export default Email;
-
-
-
-

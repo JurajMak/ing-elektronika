@@ -6,7 +6,6 @@ const ContactCard = () => {
   return (
     <Card className="grid grid-cols-6 gap-4 p-4 w-full h-[400px] items-center">
       <div className="col-start-2 col-span-5  flex flex-col items-start">
-        {/* <Clock size={30} className="bg-primary text-secondary p-1 rounded " /> */}
         <p className="font-bold text-xl mb-2">Radno vrijeme</p>
         <div className="flex flex-col justify-between items-start ">
           <p>
@@ -20,8 +19,6 @@ const ContactCard = () => {
       </div>
 
       <div className="col-start-2 col-span-5  flex flex-col items-start">
-        {/* <Phone size={30} className="bg-primary text-secondary p-1 rounded " /> */}
-
         <div className="flex flex-col justify-between">
           <p className="font-bold text-xl mb-2">Kontakt</p>
           <p>
@@ -30,13 +27,7 @@ const ContactCard = () => {
         </div>
       </div>
       <div className="col-start-2 col-span-5 flex flex-col items-start ">
-        {/* <div> */}
-        {/* <AtSign
-            size={30}
-            className="bg-primary text-secondary p-1 rounded "
-          /> */}
         <p className="font-bold text-xl mb-2">Email</p>
-        {/* </div> */}
 
         <Link href="mailto:ingelekt@gmail.com"> ingelekt@gmail.com</Link>
       </div>
@@ -50,7 +41,6 @@ const ContactCard = () => {
         </p>
         <Facebook
           size={30}
-          // className="bg-primary text-secondary p-1 rounded "
           className="bg-[#4267B2] text-secondary p-1 rounded dark:text-[#4267B2] dark:bg-foreground"
         />
       </Link>

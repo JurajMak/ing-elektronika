@@ -25,6 +25,7 @@ export function Map() {
   });
 
   const [map, setMap] = React.useState(null);
+  console.log(map, 'map');
 
   const onLoad = React.useCallback(function callback(map: any) {
     const bounds = new window.google.maps.LatLngBounds(center);
@@ -65,9 +66,15 @@ export function Map() {
             }}
           >
             <div className="max-w-xs bg-white shadow-md rounded-lg p-2">
-              <h3 className="text-lg font-semibold mb-2">ING-ELEKTRONIKA </h3>
-              <p className="text-gray-700 text-lg ">Vinkovačka cesta 21 </p>
-              <p className="text-gray-700 text-lg ">31000, Osijek Croatia</p>
+              <h3 className="text-lg text-primary-foreground font-semibold mb-2">
+                ING-ELEKTRONIKA
+              </h3>
+              <p className="text-primary-foreground text-lg ">
+                Vinkovačka cesta 21
+              </p>
+              <p className="text-primary-foreground text-lg ">
+                31000, Osijek Croatia
+              </p>
             </div>
           </InfoWindowF>
         </GoogleMap>

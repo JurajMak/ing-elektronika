@@ -47,13 +47,13 @@ const KontaktForma = () => {
       }),
     })
       .then(() => {
+        form.resetForm();
+        setLoading(false);
         toast({
           title: 'Upit uspješno poslan!',
           description:
             'Odgovoriti ćemo Vam u najbržem mogućem roku, hvala na strpljenu.',
         });
-        form.resetForm();
-        setLoading(false);
       })
       .catch((error) => {
         toast({
