@@ -10,14 +10,20 @@ export async function POST(req: NextRequest) {
   const { title, name, email, tel, description } = await req.json();
 
   try {
-    const data = await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: `${process.env.EMAIL_FROM}`,
       to: `${process.env.EMAIL_TO}`,
       subject: `${title}`,
-      react: Email({ title, name, tel, email, description }),
+      react: Email({
+        title,
+        name,
+        tel,
+        email,
+        description,
+      }) as React.ReactElement,
     });
 
-    return NextResponse.json({data});
+    return NextResponse.json({ data });
   } catch (error) {
     return NextResponse.json({ error });
   }

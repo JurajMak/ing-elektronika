@@ -13,14 +13,13 @@ import SectionCard from '@/components/cards/section-card';
 import SkeletonCard from '@/components/cards/skeleton-card';
 import Image from 'next/image';
 import electronics from '@/../public/assets/images/electronic-technician-holds-two-identical-smartphones-comparison-one-hand-broken-another-new.jpg';
-import banner from '@/../public/assets/images/top-view-master-works-broken-tablet-repair-it-near-tool-bag-wooden-table-service-lab.jpg';
 
 export default function Home() {
-  const [equipment, setEquipment] = React.useState(EQUIPMENT.slice(0, 6));
+  const [equipment, setEquipment] = React.useState(EQUIPMENT.slice(0, 4));
   const [isLoading, setLoading] = React.useState(false);
 
   // const loadMoreItems = () => {
-  //   const nextItems = EQUIPMENT.slice(equipment.length, equipment.length + 3);
+  //   const nextItems = EQUIPMENT.slice(equipment.length, equipment.length + 4);
   //   setEquipment([...equipment, ...nextItems]);
   // };
 
@@ -33,13 +32,13 @@ export default function Home() {
     setLoading(true);
 
     setTimeout(() => {
-      const nextItems = EQUIPMENT.slice(equipment.length, equipment.length + 6);
+      const nextItems = EQUIPMENT.slice(equipment.length, equipment.length + 4);
       setEquipment([...equipment, ...nextItems]);
       setLoading(false);
-    }, 1000);
+    }, 400);
   };
 
-  const skeletor = Array(3).fill(null);
+  const skeletor = Array(4).fill(null);
 
   return (
     <>
@@ -51,10 +50,7 @@ export default function Home() {
           priority
         />
 
-        <div className="absolute inset-0 bg-black opacity-40">
-          {/* <h1 className="text-4xl font-semibold mb-4">Neki naslov</h1>
-          <p className="text-lg">Neki tekst</p> */}
-        </div>
+        <div className="absolute inset-0 bg-black opacity-30"></div>
         <div className="text-center z-10 absolute -bottom-56 ">
           <div className="col-span-6 px-4 my-24 lg:col-start-2 lg:col-span-10   ">
             <LicenceCard />
@@ -66,6 +62,7 @@ export default function Home() {
         <div className="col-span-6 px-4 lg:col-start-2 lg:col-span-10 my-16 xl:my-36 ">
           <div className="flex flex-col justify-between gap-12 lg:flex-row ">
             <MainCard
+              hasImage
               title={EXAMINATION.title}
               image={EXAMINATION.image}
               content={EXAMINATION.content}
@@ -73,24 +70,10 @@ export default function Home() {
             <Carusel />
           </div>
         </div>
-        {/* <div className="col-span-6  lg:col-span-12">
-          <div className="relative h-[70vh] flex items-center justify-center col-span-6 lg:col-span-12 mb-52 ">
-            <Image
-              src={banner}
-              alt="Hero Image"
-              className="absolute inset-0 object-cover w-full h-full top-0 "
-              priority
-            />
 
-            <div className="absolute inset-0 bg-black opacity-40"></div>
-            <div className="text-center z-10 absolute -bottom-56 ">
-           
-            </div>
-          </div>
-        </div> */}
-
-        <div className="col-span-6 px-4 lg:col-start-2 lg:col-span-10 xl:mb-36">
+        <div className="col-span-6 px-4 lg:col-start-2 lg:col-span-10 xl:mb-40">
           <SectionCard
+            hasImage
             title={REPAIRS.title}
             about={REPAIRS.about}
             content={REPAIRS.content}
@@ -104,8 +87,9 @@ export default function Home() {
         </h3>
 
         {equipment.map((item) => (
-          <div key={item.id} className="col-span-6 mx-auto px-6 lg:col-span-4">
+          <div key={item.id} className="col-span-6 mx-auto px-6 lg:col-span-3">
             <MainCard
+              hasImage
               key={item.id}
               title={item.title}
               image={item.image}
@@ -118,7 +102,7 @@ export default function Home() {
             {skeletor.map((_, index) => (
               <div
                 key={`skeleton_${index}`}
-                className="col-span-6 mx-auto lg:col-span-4"
+                className="col-span-6 mx-auto lg:col-span-3"
               >
                 <SkeletonCard />
               </div>

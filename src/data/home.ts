@@ -1,9 +1,10 @@
 import banner from '@/../public/assets/images/serv-banner.jpg';
+import network from '@/../public/assets/images/network-mainboard-service-toy-broadcasting.jpg';
 import fontele from '@/../public/assets/images/fontele.png';
 
 export const EXAMINATION = {
   title: 'Besplatan pregled uređaja',
-  image: banner,
+  image: network,
   content: ` Ing-elektronika je nasuvremenije opremljen servis, što otvara
   mogućnost popravka sve danas dostupne elektronike uključujući i
   upravljačke i pogonske elektronike strojeva, vozila..`,

@@ -9,6 +9,10 @@ export type CardType<T> = {
   content?: T;
   image?: any;
   about?: string;
+  hasImage?: boolean;
+  bottomImage?: boolean;
+  removeBorder?: boolean;
+  removeSeparator?: boolean;
 };
 
 export type FormType = {

@@ -9,8 +9,6 @@ import imageThree from '@/../public/assets/images/radni-stol.jpg';
 import imageFour from '@/../public/assets/images/servis.jpg';
 import Autoplay from 'embla-carousel-autoplay';
 import AutoHeight from 'embla-carousel-auto-height';
-import electronics from '@/../public/assets/images/electronic-technician-holds-two-identical-smartphones-comparison-one-hand-broken-another-new.jpg';
-import banner from '@/../public/assets/images/top-view-master-works-broken-tablet-repair-it-near-tool-bag-wooden-table-service-lab.jpg';
 
 const Carusel = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [
@@ -21,15 +19,15 @@ const Carusel = () => {
   const images = [imageOne, imageTwo, imageThree, imageFour];
   return (
     <div className="embla rounded-lg w-full" ref={emblaRef}>
-      <div className="embla__container">
+      <div className="embla__container rounded-lg">
         {images.map((item, index) => (
           <Image
             priority
             key={index}
             src={item}
-            alt="image"
-            width={2000}
-            className="embla__slide"
+            alt="alt"
+            width={500}
+            className="embla__slide rounded-lg"
           ></Image>
         ))}
       </div>

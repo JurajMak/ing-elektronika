@@ -1,6 +1,9 @@
 import TEL from '@/../public/assets/images/fontele.png';
 
-
+export const SERVICE_CARD = {
+  title: 'Besplatan pregled uređaja!',
+  content: `Cilj nam je pružiti vam jasnu sliku stanja vašeg uređaja bez ikakvih troškova inicijalnog pregleda. Posjetite nas danas i povjerite nam brigu o vašoj elektronici uz besplatan i transparentan pregled uređaja.`,
+};
 export const SERVICES = [
   {
     title: 'Popravak audio opreme',

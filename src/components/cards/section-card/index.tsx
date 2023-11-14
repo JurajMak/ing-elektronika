@@ -16,14 +16,18 @@ const SectionCard = ({
   content,
   image,
   about,
+  hasImage,
+  removeBorder,
+  removeSeparator,
 }: CardType<ContentType[]>) => {
+  const noBorder = removeBorder && 'border-none';
   return (
     <div className="mt-auto">
-      <Card>
+      <Card className={`${noBorder}`}>
         <CardHeader>
           <CardTitle>{title}</CardTitle>
           <CardDescription>{description}</CardDescription>
-          <Separator />
+          {!removeSeparator && <Separator />}
         </CardHeader>
 
         <CardContent>
@@ -31,13 +35,16 @@ const SectionCard = ({
             <div>
               {content?.map((item) => <p key={item.id}>{item.text}</p>)}
             </div>
-            <Image
-              src={image}
-              alt="fontele"
-              width={250}
-              height={250}
-              className="m-auto mt-12 lg:mt-0"
-            />
+            {hasImage && (
+              <Image
+                src={image}
+                alt="fontele"
+                width={250}
+                height={250}
+                priority
+                className="m-auto mt-12 lg:mt-0"
+              />
+            )}
           </div>
 
           <p>{about}</p>

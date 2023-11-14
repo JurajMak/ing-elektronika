@@ -4,7 +4,7 @@ import { NAV_PROPS } from './nav-props';
 import { HeaderNavigation } from './navigation';
 import { ModeToggle } from '../toggle-theme';
 import Link from 'next/link';
-import { Cable, Menu } from 'lucide-react';
+import { MonitorSmartphoneIcon, Menu } from 'lucide-react';
 import { Button } from '../ui/button';
 
 import dynamic from 'next/dynamic';
@@ -21,8 +21,10 @@ const Header = () => {
         <div className="mx-auto lg:mx-0 flex items-center justify-between">
           <Link href="/">
             <div className="flex items-center gap-6">
-              <Cable size={30} />
-              <h1 className="text-2xl  lg:block">Ing-Elektronika</h1>
+              <MonitorSmartphoneIcon size={30} />
+              <h1 className="text-2xl font-semibold lg:text-3xl  lg:block">
+                Ing-Elektronika
+              </h1>
             </div>
           </Link>
           <Button

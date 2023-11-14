@@ -1,11 +1,14 @@
 import React from 'react';
-import { AtSign, Clock, Phone, Facebook } from 'lucide-react';
+import { AtSign, Clock, Phone, Facebook, CopyrightIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Separator } from '../ui/separator';
+
 const Footer = () => {
+  const date = new Date().getFullYear();
+
   return (
     <>
-      <div className="mt-16 mb-6">
+      <div className="mt-16 my-6">
         <Separator />
       </div>
 
@@ -57,10 +60,13 @@ const Footer = () => {
           <p className="font-bold">Pratite nas na Facebooku</p>
         </Link>
       </div>
+      <div className="w-full flex my-6 content-center">
+        <p className="mx-auto flex items-center font-semibold">
+          <CopyrightIcon className="mr-2" /> Ing-Elektronika {date}
+        </p>
+      </div>
     </>
   );
 };
 
 export default Footer;
-
-// https://www.facebook.com/Ingelektronika
