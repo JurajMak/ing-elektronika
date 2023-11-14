@@ -48,6 +48,7 @@ export default function Home() {
           alt="Hero Image"
           className="absolute inset-0 object-cover w-full h-full top-0 "
           priority
+          fill
         />
 
         <div className="absolute inset-0 bg-black opacity-30"></div>

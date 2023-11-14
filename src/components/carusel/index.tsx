@@ -19,7 +19,7 @@ const Carusel = () => {
   const images = [imageOne, imageTwo, imageThree, imageFour];
   return (
     <div className="embla rounded-lg w-full" ref={emblaRef}>
-      <div className="embla__container rounded-lg">
+      <div className="embla__container">
         {images.map((item, index) => (
           <Image
             priority
@@ -27,7 +27,7 @@ const Carusel = () => {
             src={item}
             alt="alt"
             width={500}
-            className="embla__slide rounded-lg"
+            className="embla__slide"
           ></Image>
         ))}
       </div>

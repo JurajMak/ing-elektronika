@@ -3,7 +3,7 @@ import network from '@/../public/assets/images/network-mainboard-service-toy-bro
 import fontele from '@/../public/assets/images/fontele.png';
 
 export const EXAMINATION = {
-  title: 'Besplatan pregled uređaja',
+  title: 'Vrhunska oprema i ekspertiza',
   image: network,
   content: ` Ing-elektronika je nasuvremenije opremljen servis, što otvara
   mogućnost popravka sve danas dostupne elektronike uključujući i
