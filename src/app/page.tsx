@@ -47,7 +47,9 @@ export default function Home() {
           src={electronics}
           alt="Hero Image"
           className="absolute inset-0 object-cover w-full h-full top-0 "
-          priority
+          placeholder="blur"
+          fill
+          loading="eager"
         />
 
         <div className="absolute inset-0 bg-black opacity-30"></div>

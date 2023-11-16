@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="flex flex-col justify-between">
             <p className="font-bold">Kontakt</p>
             <p>
-              Tel/Fax: <span className="font-bold">+385 (31) 272 622</span>{' '}
+              Tel/Fax: <span className="font-bold">+385 (31) 272 622</span>
             </p>
           </div>
         </div>
@@ -62,7 +62,8 @@ const Footer = () => {
       </div>
       <div className="w-full flex my-6 content-center">
         <p className="mx-auto flex items-center font-semibold">
-          <CopyrightIcon className="mr-2" /> Ing-Elektronika {date}
+          <CopyrightIcon className="mr-1" />
+          {date} Ing-Elektronika
         </p>
       </div>
     </>
