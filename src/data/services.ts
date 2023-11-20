@@ -1,10 +1,18 @@
 import TEL from '@/../public/assets/images/fontele.png';
+import { ContentType, DataType } from '@/types';
 
-export const SERVICE_CARD = {
+export type ServiceCardType<T> = Omit<
+  DataType<T>,
+  'id' | 'about' | 'description' | 'image'
+>;
+
+export type ServicesType<T> = Omit<DataType<T>, 'id' | 'about' | 'description'>;
+
+export const SERVICE_CARD: ServiceCardType<string> = {
   title: 'Besplatan pregled uređaja!',
   content: `Cilj nam je pružiti vam jasnu sliku stanja vašeg uređaja bez ikakvih troškova inicijalnog pregleda. Posjetite nas danas i povjerite nam brigu o vašoj elektronici uz besplatan i transparentan pregled uređaja.`,
 };
-export const SERVICES = [
+export const SERVICES: ServicesType<ContentType[]>[] = [
   {
     title: 'Popravak audio opreme',
     image: TEL,

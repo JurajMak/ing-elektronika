@@ -1,5 +1,5 @@
 import React from 'react';
-import { AtSign, Clock, Phone, Facebook } from 'lucide-react';
+import {  Facebook } from 'lucide-react';
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 const ContactCard = () => {

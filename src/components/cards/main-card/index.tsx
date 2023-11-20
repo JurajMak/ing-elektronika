@@ -8,7 +8,7 @@ import {
 import { Separator } from '@/components/ui/separator';
 import React from 'react';
 import Image from 'next/image';
-import { CardType } from '@/types';
+import { CardPropsType } from '@/types';
 
 const MainCard = ({
   title,
@@ -16,7 +16,7 @@ const MainCard = ({
   content,
   hasImage,
   bottomImage,
-}: CardType<string>) => {
+}: CardPropsType<string>) => {
   const imageMargin = hasImage && 'mb-4';
   return (
     <Card className="w-full max-w-lg mb-6">

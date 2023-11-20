@@ -12,8 +12,12 @@ import XELTEK from '@/../public/assets/images/UNIVERZALNI PROGRAMATOR XELTEK.jpg
 import PROGRAMATOR from '@/../public/assets/images/UNIVERZALNI PROGRAMATOR.jpg';
 import WATTMETER from '@/../public/assets/images/WATTMETER.jpg';
 import CABLE from '@/../public/assets/images/CABLE.jpg';
+import { DataType } from '@/types';
 
-export const EQUIPMENT = [
+export type EquipmentType<T> = Omit<DataType<T>, "about" |"description">;
+
+
+export const EQUIPMENT:EquipmentType<string>[] = [
   {
     id: 1,
     title: 'SIGNAL GENERATOR Rohde & Schwarz SME - 03',
