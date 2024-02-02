@@ -62,8 +62,8 @@ const Footer = () => {
       </div>
       <div className="w-full flex my-6 content-center">
         <p className="mx-auto flex items-center font-semibold">
-          <CopyrightIcon className="mr-1" />
-          {date} Ing-Elektronika
+          Ing-Elektronika <CopyrightIcon size={20} className="ml-2" />
+          {date}
         </p>
       </div>
     </>

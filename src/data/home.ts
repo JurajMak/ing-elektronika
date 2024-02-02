@@ -1,8 +1,13 @@
-import banner from '@/../public/assets/images/serv-banner.jpg';
+
 import network from '@/../public/assets/images/network-mainboard-service-toy-broadcasting.jpg';
 import fontele from '@/../public/assets/images/fontele.png';
+import { ContentType, DataType } from '@/types';
 
-export const EXAMINATION = {
+export type ExaminationType<T> = Omit<DataType<T>,"id" | "about" |"description">
+
+export type RepairsType<T>=Omit<DataType<T>,"id">
+
+export const EXAMINATION:ExaminationType<string> = {
   title: 'Vrhunska oprema i ekspertiza',
   image: network,
   content: ` Ing-elektronika je nasuvremenije opremljen servis, što otvara
@@ -10,7 +15,7 @@ export const EXAMINATION = {
   upravljačke i pogonske elektronike strojeva, vozila..`,
 };
 
-export const REPAIRS = {
+export const REPAIRS:RepairsType<ContentType[]> = {
   title: 'SVE se može popraviti',
   description: 'Vršimo popravke, održavanja i restauracije.',
   content: [

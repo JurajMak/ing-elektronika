@@ -8,15 +8,19 @@ import { Button } from '../ui/button';
 import { FormType } from '@/types';
 import { useToast } from '@/components/ui/use-toast';
 import { FORM_SCHEMA } from './schema';
-// import { sendEmail } from '@/utils/sendEmail';
 import FormError from './form-error';
 import { Loader } from 'lucide-react';
+
+
+
 
 const KontaktForma = () => {
   const { toast } = useToast();
   const [loading, setLoading] = React.useState(false);
 
-  const form = useFormik<FormType>({
+   type FormPropsType = Omit<FormType,"toast">;
+
+  const form = useFormik<FormPropsType>({
     initialValues: {
       title: '',
       name: '',
@@ -112,7 +116,7 @@ const KontaktForma = () => {
         )}
       </div>
       <div>
-        <Label htmlFor="tel">Telefon</Label>
+        <Label htmlFor="tel">Telefon/Mobitel</Label>
         <Input
           id="tel"
           type="tel"

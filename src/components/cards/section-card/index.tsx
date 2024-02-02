@@ -8,7 +8,7 @@ import {
 import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
 import React from 'react';
-import { CardType, ContentType } from '@/types';
+import { CardPropsType, ContentType } from '@/types';
 
 const SectionCard = ({
   title,
@@ -19,7 +19,7 @@ const SectionCard = ({
   hasImage,
   removeBorder,
   removeSeparator,
-}: CardType<ContentType[]>) => {
+}: CardPropsType<ContentType[]>) => {
   const noBorder = removeBorder && 'border-none';
   return (
     <div className="mt-auto">
