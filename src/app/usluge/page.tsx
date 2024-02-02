@@ -14,7 +14,6 @@ const Services = () => {
           src={banner}
           alt="Hero Image"
           className="absolute inset-0 object-cover w-full h-full top-0 "
-          // priority
           placeholder="blur"
           fill
           loading="eager"

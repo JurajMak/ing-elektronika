@@ -53,7 +53,7 @@ export default function Home() {
         />
 
         <div className="absolute inset-0 bg-black opacity-30"></div>
-        <div className="text-center z-10 absolute -bottom-56 ">
+        <div className="text-center z-10 absolute -bottom-56">
           <div className="col-span-6 px-4 my-24 lg:col-start-2 lg:col-span-10   ">
             <LicenceCard />
           </div>
